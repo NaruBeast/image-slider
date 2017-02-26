@@ -1,0 +1,46 @@
+.container{
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}
+
+.lol {
+  height: 100px;
+  width: 300px;
+  background-color: yellow;
+}
+.wrapper {
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+#slider {
+  height: 400px;
+  width: 600px;
+  overflow: hidden;
+  margin: 30px auto;
+
+
+}
+
+img {
+  height: 400px;
+  width: 600px;
+  float: left;
+  display: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #777;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  margin-top: 30px;
+}
+a.left {
+  float:left;
+}
+a.right {
+  float: right;
+}
