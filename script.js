@@ -11,17 +11,42 @@ var startSlider = function() {
   count = $('img').length;
 
   loop = setInterval(function(){
-    if(sliderNext > 4) {
+    if(sliderNext > count) {
       sliderInt = 1;
       sliderNext = 1;
-      
     }
     $('img').fadeOut(300);
     $('#'+sliderNext).fadeIn(300);
 
     sliderInt = sliderNext;
-    sliderNext = sliderNext + 1;
+    sliderNext++;
   }, 3000)
+
+}
+
+function prev() {
+  newSlide = sliderInt - 1;
+  showSlide(newSlide);
+}
+
+function next() {
+  newSlide = sliderInt + 1;
+  showSlide(newSlide);
+}
+
+function showSlide(id) {
+  if(id > count) {
+    id = 1;
+    sliderNext = 1;
+  }
+  else if(id<1) {
+    id = count;
+  }
+  $('img').fadeOut(300);
+  $('#'+id).fadeIn(300);
+
+  sliderInt = id;
+  sliderNext = id++;
 
 }
 
