@@ -11,15 +11,15 @@ var startSlider = function() {
   count = $('img').length;
 
   loop = setInterval(function(){
-    if(sliderNext > count) {
-      sliderInt = 1;
+    if(sliderNext > count){
       sliderNext = 1;
+      sliderInt = 1;
     }
     $('img').fadeOut(300);
     $('#'+sliderNext).fadeIn(300);
 
     sliderInt = sliderNext;
-    sliderNext++;
+    sliderNext = sliderNext + 1;
   }, 3000)
 
 }
@@ -34,10 +34,14 @@ function next() {
   showSlide(newSlide);
 }
 
+function stopLoop() {
+  window.clearInterval(loop);
+}
+
 function showSlide(id) {
+  stopLoop();
   if(id > count) {
     id = 1;
-    sliderNext = 1;
   }
   else if(id<1) {
     id = count;
@@ -46,8 +50,8 @@ function showSlide(id) {
   $('#'+id).fadeIn(300);
 
   sliderInt = id;
-  sliderNext = id++;
-
+  sliderNext = id+1;
+  startSlider();
 }
 
 /*$(document).ready(function() {
