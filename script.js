@@ -54,6 +54,13 @@ function showSlide(id) {
   startSlider();
 }
 
+$('img').hover(function(){
+  stopLoop();
+},
+  function(){
+    startSlider();
+  }
+);
 /*$(document).ready(function() {
   $('.container').click(function(){
       $('.container').toggleClass('lol');
